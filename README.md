@@ -1,4 +1,9 @@
 # Getting Started with Create React App
+rsc - сниппет разворачивает базовую структуру функциональног о компонента
+npm i react-router-dom firebase react-firebase-hooks
+
+
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
