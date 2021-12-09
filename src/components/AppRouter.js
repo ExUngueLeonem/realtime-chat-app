@@ -1,22 +1,30 @@
 import React from 'react';
-import {Route, Switch, Redirect} from 'react-router-dom';
-
+import {Route, Routes, Navigate} from 'react-router-dom';
+import {privateRoutes, publicRoutes,  } from '../routes';
+import { CHAT_ROUTE, LOGIN_ROUTE } from '../utils/consts';
 
 const AppRouter = () => {
     const user = true;
     return user ? 
     (
-        <Switch>
+        <React.Fragment>
+        <Routes> //мапип объекты (пути, компоненты)
             {privateRoutes.map(({path, Component}) => 
-                <Route path={path} component={Component}/>
+                <Route path={path} element={Component}/>
             )}
-        </Switch>
+        </Routes>
+            <Navigate path={LOGIN_ROUTE}/>
+        </React.Fragment>
     )
     :
     (
-        <Switch>
-
-        </Switch>
+        <Routes>
+            {publicRoutes.map(({path, Component}) => 
+                <Route path={path} element={Component}/>
+            )}
+{/*             <Redirect to={LOGIN_ROUTE}/>
+ */}
+        </Routes>
     )
     
 };
