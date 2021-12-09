@@ -7,14 +7,12 @@ const AppRouter = () => {
     const user = true;
     return user ? 
     (
-        <React.Fragment>
-        <Routes> //мапип объекты (пути, компоненты)
+        <Routes>
             {privateRoutes.map(({path, Component}) => 
                 <Route path={path} element={Component}/>
             )}
+            <Route path="*" element={<Navigate replace to={CHAT_ROUTE}/>}/>
         </Routes>
-            <Navigate path={LOGIN_ROUTE}/>
-        </React.Fragment>
     )
     :
     (
@@ -22,8 +20,8 @@ const AppRouter = () => {
             {publicRoutes.map(({path, Component}) => 
                 <Route path={path} element={Component}/>
             )}
-{/*             <Redirect to={LOGIN_ROUTE}/>
- */}
+            <Route path="*" element={<Navigate replace to={LOGIN_ROUTE}/>}/>
+
         </Routes>
     )
     
