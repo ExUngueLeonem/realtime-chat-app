@@ -6,9 +6,8 @@ import {useAuthState} from "react-firebase-hooks/auth";
 import {Context} from "../index";
 
 const AppRouter = () => {
-    
-    const {auth} = useContext(Context);
-    const [user] = useAuthState(auth);
+    const {auth} = useContext(Context)
+    const [user] = useAuthState(auth)
 
     return user ?
         (
@@ -28,7 +27,6 @@ const AppRouter = () => {
                 <Redirect to={LOGIN_ROUTE}/>
             </Switch>
         )
-    
 };
 
 export default AppRouter;

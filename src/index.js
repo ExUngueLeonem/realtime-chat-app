@@ -2,14 +2,6 @@ import React, { createContext } from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 
-//падает //import firebase from "firebase/compat/app"
-
-
-//import "firebase/compat/auth"
-//import "firebase/compat/firestore"
-
-//import { initializeApp } from "firebase/app";
-
 import firebase from 'firebase';
 import 'firebase/firestore';
 import 'firebase/auth';
