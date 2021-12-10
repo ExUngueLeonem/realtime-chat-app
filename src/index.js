@@ -8,7 +8,7 @@ import App from './App';
 //import "firebase/compat/auth"
 //import "firebase/compat/firestore"
 
-import { initializeApp } from "firebase/app";
+//import { initializeApp } from "firebase/app";
 
 import firebase from 'firebase';
 import 'firebase/firestore';
@@ -28,9 +28,10 @@ const firebaseConfig = {
 // Initialize Firebase
 export const Context = createContext(null); 
 
-const app = initializeApp(firebaseConfig);
-const auth = firebase.auth();             //падает
-const firestore = firebase.firestore();   //падает
+const app = firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();             
+const firestore = firebase.firestore();
+
 
 ReactDOM.render(
   <Context.Provider value={{
