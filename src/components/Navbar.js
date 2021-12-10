@@ -8,7 +8,7 @@ import { NavLink } from 'react-router-dom';
 import { LOGIN_ROUTE } from '../utils/consts';
 
 const Navbar = () => {
-    const user = true;
+    const user = false;
     return (
         <AppBar color="primary" position="static">
             <Toolbar variant="dense">

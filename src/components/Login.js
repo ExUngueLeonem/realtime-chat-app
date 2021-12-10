@@ -7,9 +7,9 @@ import firebase from 'firebase';
 const Login = () => {
 const {auth} = useContext(Context);
 
-const login = () => {
+const login = async () => {
     const provider = new firebase.auth.GoogleAuthProvider();
-    const {user} = auth.signWithPopup(provider);
+    const {user} = await auth.signInWithPopup(provider);
     console.log(user);
 }
 
