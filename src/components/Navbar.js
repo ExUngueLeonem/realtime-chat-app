@@ -9,13 +9,17 @@ import {useAuthState} from "react-firebase-hooks/auth";
 
 
 const Navbar = () => {
-    const user = false;
+    const {auth} = useContext(Context)
+    const [user] = useAuthState(auth)
+
+
+
     return (
-        <AppBar color="primary" position="static">
+        <AppBar color="secondary" position="static">
             <Toolbar variant="dense">
                 <Grid container justifyContent={"flex-end"}>
                     {user ?  
-                        <Button color="inherit" variant={"outlined"}>Выйти</Button>
+                        <Button onClick={() => auth.signOut()} color="inherit" variant={"outlined"}>Выйти</Button>
                         :
                         <NavLink to={LOGIN_ROUTE}>
                             <Button color="inherit" variant={"outlined"}>Логин</Button>
